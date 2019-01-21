@@ -1,0 +1,98 @@
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form input {
+    margin: 10px 0;
+  }
+}
+
+/* Style the form - display items horizontally */
+
+html{
+  height: 120%;
+  background-image: url("images/pic01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:#393939;
+
+}
+ h1 {
+  text-align: center; 
+    padding : 40px;
+
+
+}
+
+
+legend{
+  text-align: center; 
+font-style: normal;
+text-align:center;
+font-family: Verdana  ;
+font-size: 1.3rem;
+font-weight: bold;
+color:#393939;
+}
+
+table ,td {
+
+}
+
+table{
+  border-top : 1px solid gray;
+  border-bottom :1px solid gray;
+  width: 80%;
+  margin: 10px  auto 0px auto ;
+  padding : 5px;
+    border-spacing: 0 1em;
+
+
+}
+
+input{
+  height:30px;
+  width: 80px;
+}
+
+select {
+height: 30px;
+width:200px;
+
+font-style: normal;
+text-align:center;
+font-family: Verdana  ;
+font-size: 1rem;
+color:#393939;
+}
+
+
+td{
+
+  padding: 10px;
+}
+
+td.lcolumn , select option {
+font-style: normal;
+text-align:center;
+font-family: Times New Roman  ;
+font-size: 1.3rem;
+font-weight: bold;
+color:#393939;
+
+}
+
+td.rcolumn {
+  text-align:left;
+
+
+
+}
+
+td.bottom{
+text-align: center; 
+
+
+
+}
+
+
+

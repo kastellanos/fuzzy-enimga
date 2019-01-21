@@ -1,0 +1,2 @@
+#!/bin/bash
+/spark/bin/spark-submit --master k8s://https://api.k8s.stdtcluster.host --deploy-mode cluster --name spark-heart --conf spark.executor.instances=2 --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark --conf spark.kubernetes.container.image=kastellanos/spark-py:p6 --conf spark.kubernetes.driver.pod.name=spark-heart --jars http://central.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-8-assembly_2.11/2.4.0/spark-streaming-kafka-0-8-assembly_2.11-2.4.0.jar local:///opt/app/sapp.py

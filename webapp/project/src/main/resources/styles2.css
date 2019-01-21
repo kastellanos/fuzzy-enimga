@@ -1,0 +1,96 @@
+/* Style the form - display items horizontally */
+.form {
+  /*display: flex;*/
+  align-items: center;
+  width:400px;
+  margin-top:40px;
+  margin-left: 410px;
+
+}
+html{
+  height: 120%;
+  background-image: url("images/pic01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+ h1 {
+  margin-left: 540px;
+}
+
+/* Add some margins for each label*/
+.form label {
+  /*margin: 5px 10px 5px 0;*/
+  margin-left: 40px;
+  margin-right: 40px;
+  Font-Weight: Bold;
+}
+
+.form legend {
+  margin-left: 30px;
+  font-size: 150%;
+  Font-Weight: Bold;
+}
+
+/* Style the input fields */
+.form input {
+
+  /*justify-content: center;
+  align-items: center;*/
+  vertical-align: middle;
+  /*margin: 5px 10px 5px 0;*/
+  margin-right: 40px;
+  padding: 10px;
+
+  background-color: #fff;
+  border: 1px solid #ddd;
+
+}
+.eio {
+  vertical-align: middle;
+  /*margin: 5px 10px 5px 0;*/
+
+  padding: 10px;
+  margin-left: 0px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 102px;s
+}
+.year{
+  margin-left: 34px;
+}
+
+.month{
+  margin-left: 24px;
+}
+.day{
+  margin-left: 39px;
+}
+
+.max{
+  margin-left: 5px;
+  width: 77px;
+
+}
+.min{
+  margin-left: 5px;
+  width: 79px;
+}
+
+
+/* Style the submit button */
+.form p {
+  margin-left: 40px;
+  color: white;
+  padding-left: 60px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form input {
+    margin: 10px 0;
+  }
+}

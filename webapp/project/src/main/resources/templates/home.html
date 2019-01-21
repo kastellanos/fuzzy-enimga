@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="styles3.css" />
+    <!-- <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script>
+		var stompClient;
+		$(document).ready(function() {
+		var socket = new SockJS('/live-temperature');
+		
+		stompClient = Stomp.over(socket);
+		stompClient.connect({}, function(frame){
+			stompClient.subscribe('/topic/temperature', function(temperature){
+				response = $.parseJSON(temperature.body);
+				$(function() {
+				    $.each(response, function(i, item) {
+				        var $tr = $('<tr>').append(
+				            $('<td>').text(item.ville),
+				            $('<td>').text("Etas unis"),
+				            $('<td>').text(item.category),
+				            $('<td>').text(item.value),
+				  	
+				        );
+				        $('#tdata').append($tr);
+				        
+				    });
+				});
+			})
+		});
+		});
+	</script>
+</head>
+<body>
+	<h1>Result</h1>
+    
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Ville</th>
+        <th>Pays</th>
+        <th>Element of interest</th>
+        <th>Valeur</th>
+        
+      </tr>
+    </thead>
+    <tbody id="tdata">
+      <tr>
+
+      </tr>
+
+    </tbody>
+  </table>
+    <a href="/">Make another search</a>
+</body>
+</html>

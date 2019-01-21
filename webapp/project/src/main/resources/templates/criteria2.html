@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<h1>Mon Guide</h1>
+    <form class= "form" action="#" th:action="@{/home}" th:object="${weatherCriteria}" method="post">
+   <legend>Saisissez vos préférences</legend>
+                <br />
+                <br />
+    <table>
+      <tr> 
+          <td class ="lcolumn"> <label>Year:</label> </td>
+          <td class ="rcolumn"> <input class="year" name="year" type="textarea" th:field="*{year}" /></td>
+      </tr>
+
+      <tr> 
+          <td class ="lcolumn"> <label>Month:</label> </td>
+          <td class ="rcolumn"><input class="month" name="month" type="textarea" th:field="*{month}" /></td>
+      </tr>
+
+      <tr> 
+          <td class ="lcolumn"> <label>Day:</label>  </td>
+          <td class ="rcolumn">  <input class="day" name="day" type="textarea" th:field="*{day}" /> </td>
+      </tr>
+
+      <tr   > 
+          <td class ="lcolumn">  <label >Element of interest : </label></td>
+          <td class ="rcolumn"> <select  class="eio" name="eio" id="eio" onchange="myFunction()" th:field="*{type}">
+                  <option value=" " >Selectionnez </option>
+                  <option value="temp" >Temperature</option>
+                  <option value="qpf" >Total Precipitation</option>
+                  <option value="wspd">Wind Speed</option>
+                  <option value="snow">Total Snowfall</option>
+                </select> </td>
+      </tr>
+ 
+      <tr   id="eoimax" style="display:none"> 
+          <td class ="lcolumn">  <label>Max Temperature : </label></td>
+          <td class ="rcolumn">   <input type="textarea" class="max" name="maximum" placeholder="Fahrenheit"  id="max" th:field="*{maximum}"/></td>
+      </tr>
+
+     
+      <tr  id="eoimin" style="display:none"> 
+          <td class ="lcolumn">  <label>Min Temperature : </label></td>
+          <td class ="rcolumn">  <input type="textarea" class="min" name="minimum" placeholder="Fahrenheit" id="min" th:field="*{minimum}"/></td>
+      </tr>
+
+
+      <tr > 
+          <td class="bottom" colspan ="2"> <input type="submit" value="Submit" class="input" /> 
+            <input type="reset" value="Reset" class="input"  /></td>
+      </tr>
+                
+    </table >
+
+    <script type="text/javascript">
+        function myFunction() {
+             var x = document.getElementById("eio").value;
+            if(x==="temp"){
+                 document.getElementById("eoimax").style.display = '';
+                 document.getElementById("eoimin").style.display = '';
+
+             }else {
+              document.getElementById("eoimax").style.display =  'none' ;
+              document.getElementById("eoimin").style.display =  'none' ;
+             }
+        }
+        </script>
+    </form>
+
+</body>
+
+</html>
